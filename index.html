@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agentblazer Club Inauguration</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 350px;
+            max-height: 400px;
+        }
+        @media (max-width: 768px) {
+            .chart-container {
+                height: 300px;
+            }
+        }
+        .timeline {
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background-color: #3357FF;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+            border-radius: 3px;
+        }
+        .timeline-container {
+            padding: 10px 40px;
+            position: relative;
+            background-color: inherit;
+            width: 50%;
+        }
+        .timeline-container.left {
+            left: 0;
+        }
+        .timeline-container.right {
+            left: 50%;
+        }
+        .timeline-container::after {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            right: -12px;
+            background-color: white;
+            border: 4px solid #FF5733;
+            top: 25px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+        .timeline-container.right::after {
+            left: -13px;
+        }
+        .timeline-content {
+            padding: 20px 30px;
+            background-color: white;
+            position: relative;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+        }
+        @media screen and (max-width: 768px) {
+            .timeline::after {
+                left: 31px;
+            }
+            .timeline-container {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+            .timeline-container.right {
+                left: 0%;
+            }
+            .timeline-container.left::after, .timeline-container.right::after {
+                left: 18px;
+            }
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <header class="bg-white shadow-md">
+        <div class="container mx-auto px-6 py-12 text-center">
+            <h1 class="text-4xl md:text-6xl font-black text-gray-900 leading-tight">Agentblazer Club on Campus, Anurag University</h1>
+            <p class="text-xl md:text-2xl font-semibold text-gray-700 mt-2">An Initiative by Office of Industry Alliances</p>
+            <p class="text-xl md:text-2xl font-semibold text-gray-700 mt-1">In collaboration with Salesforce Global Workforce Development Team</p>
+            <p class="text-2xl md:text-3xl font-bold text-[#3357FF] mt-2">Inauguration Ceremony</p>
+            <!-- Added Inauguration Date -->
+            <p class="text-xl md:text-2xl font-semibold text-gray-700 mt-1">August 5, 2025</p>
+            <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-gray-100 p-6 rounded-lg">
+                    <p class="text-4xl font-bold text-[#FF5733]">150+</p>
+                    <p class="text-lg font-semibold mt-2">Expected Attendees</p>
+                </div>
+                <div class="bg-gray-100 p-6 rounded-lg">
+                    <p class="text-4xl font-bold text-[#33FF57]">8</p>
+                    <p class="text-lg font-semibold mt-2">Keynote Sessions & Activities</p>
+                </div>
+                <div class="bg-gray-100 p-6 rounded-lg">
+                    <p class="text-4xl font-bold text-[#FF33A1]">1</p>
+                    <p class="text-lg font-semibold mt-2">Pioneering Community</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6 py-12">
+
+        <section id="vision" class="mb-20">
+            <h2 class="text-3xl font-bold text-center mb-4">Our Vision & Mission</h2>
+            <p class="max-w-3xl mx-auto text-center text-lg text-gray-600 mb-12">
+                The official launch of the Agentblazer Club aims to build a vibrant community centered around Agentforce and Responsible AI, inspiring students to pursue groundbreaking careers and fostering connections with industry leaders.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <span class="text-5xl">🚀</span>
+                    <h3 class="text-xl font-bold mt-4 mb-2">Official Launch</h3>
+                    <p>Formally introduce the club to the university community and our industry partners.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <span class="text-5xl">💡</span>
+                    <h3 class="text-xl font-bold mt-4 mb-2">Inspire & Motivate</h3>
+                    <p>Share insights on career opportunities in Agentforce and Responsible AI.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <span class="text-5xl">🏆</span>
+                    <h3 class="text-xl font-bold mt-4 mb-2">Showcase Talent</h3>
+                    <p>Highlight student achievements through project presentations and awards.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <span class="text-5xl">🤝</span>
+                    <h3 class="text-xl font-bold mt-4 mb-2">Facilitate Networking</h3>
+                    <p>Connect students with faculty, club leads, and industry professionals.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <span class="text-5xl">🗺️</span>
+                    <h3 class="text-xl font-bold mt-4 mb-2">Outline Initiatives</h3>
+                    <p>Present the club's roadmap, including summer training and future projects.</p>
+                </div>
+                 <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <span class="text-5xl">🧠</span>
+                    <h3 class="text-xl font-bold mt-4 mb-2">Generate Awareness</h3>
+                    <p>Educate attendees on the club's mission, vision, and planned activities.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="agenda" class="mb-20">
+            <h2 class="text-3xl font-bold text-center mb-12">The Inaugural Agenda</h2>
+            <div class="timeline">
+                <div class="timeline-container left">
+                    <div class="timeline-content">
+                        <h3 class="font-bold text-lg text-[#3357FF]">10:00 AM</h3>
+                        <p class="font-semibold">Welcome & Inaugural Speech</p>
+                        <p class="text-sm text-gray-600">by Director of OIA, Anurag University</p>
+                    </div>
+                </div>
+                <div class="timeline-container right">
+                    <div class="timeline-content">
+                        <h3 class="font-bold text-lg text-[#3357FF]">10:10 AM</h3>
+                        <p class="font-semibold">Keynote: The Future is Intelligent</p>
+                        <p class="text-sm text-gray-600">by Guest Speaker</p>
+                    </div>
+                </div>
+                <div class="timeline-container left">
+                    <div class="timeline-content">
+                        <h3 class="font-bold text-lg text-[#3357FF]">10:30 AM</h3>
+                        <p class="font-semibold">Summer Training Overview</p>
+                        <p class="text-sm text-gray-600">A look at what we did.</p>
+                    </div>
+                </div>
+                <div class="timeline-container right">
+                    <div class="timeline-content">
+                        <h3 class="font-bold text-lg text-[#3357FF]">10:40 AM</h3>
+                        <p class="font-semibold">Best Project Presentation</p>
+                        <p class="text-sm text-gray-600">Showcasing student innovation.</p>
+                    </div>
+                </div>
+                <div class="timeline-container left">
+                    <div class="timeline-content">
+                        <h3 class="font-bold text-lg text-[#3357FF]">10:50 AM</h3>
+                        <p class="font-semibold">Special Achievement Awards</p>
+                        <p class="text-sm text-gray-600">Recognizing excellence.</p>
+                    </div>
+                </div>
+                <div class="timeline-container right">
+                    <div class="timeline-content">
+                        <h3 class="font-bold text-lg text-[#3357FF]">11:00 AM</h3>
+                        <p class="font-semibold">Meet the Student Leads</p>
+                        <p class="text-sm text-gray-600">Introduction by Agentblazer Club Chair.</p>
+                    </div>
+                </div>
+                 <div class="timeline-container left">
+                    <div class="timeline-content">
+                        <h3 class="font-bold text-lg text-[#3357FF]">11:10 AM</h3>
+                        <p class="font-semibold">Career Session & Responsible AI</p>
+                        <p class="text-sm text-gray-600">An interactive hour with the Guest Speaker.</p>
+                    </div>
+                </div>
+                <div class="timeline-container right">
+                    <div class="timeline-content">
+                        <h3 class="font-bold text-lg text-[#3357FF]">12:10 PM</h3>
+                        <p class="font-semibold">Project Expo & Networking</p>
+                        <p class="text-sm text-gray-600">Explore projects and connect.</p>
+                    </div>
+                </div>
+                 <div class="timeline-container left">
+                    <div class="timeline-content">
+                        <h3 class="font-bold text-lg text-[#3357FF]">1:10 PM</h3>
+                        <p class="font-semibold">Lunch</p>
+                        <p class="text-sm text-gray-600">Connect and refuel.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="responsible-ai-pillars" class="mb-20">
+             <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div class="text-center md:text-left">
+                    <h2 class="text-3xl font-bold mb-4">Why Agentforce & Responsible AI? Shaping the Future</h2>
+                    <p class="text-lg text-gray-600">
+                        Agentforce and Responsible AI are at the forefront of technological innovation. This chart highlights the key pillars that ensure AI systems are developed and used ethically and effectively, addressing real-world challenges with integrity. Understanding these principles is crucial for building trustworthy AI solutions.
+                    </p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="chart-container">
+                        <canvas id="responsibleAIChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="spotlight" class="bg-white rounded-lg shadow-md p-8 mb-20">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div class="text-center">
+                    <p class="text-8xl">🏆</p>
+                    <p class="text-6xl font-bold text-[#F1C40F] mt-4">2</p>
+                    <p class="text-2xl font-semibold mt-2">Major Recognitions</p>
+                </div>
+                <div class="md:text-left text-center">
+                     <h2 class="text-3xl font-bold mb-4">Spotlight on Student Talent</h2>
+                    <p class="text-lg text-gray-600">
+                        A core part of our mission is to celebrate student achievement. The inauguration will feature two key recognitions: the <strong>Best Project Presentation</strong>, where students showcase their practical skills, and the <strong>Special Achievement Awards</strong>, honoring outstanding contributions throughout the year.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="sessions" class="mb-20">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                 <div class="bg-white p-6 rounded-lg shadow-md order-2 md:order-1">
+                    <div class="chart-container">
+                        <canvas id="sessionsChart"></canvas>
+                    </div>
+                </div>
+                <div class="text-center md:text-left order-1 md:order-2">
+                    <h2 class="text-3xl font-bold mb-4">Core Interactive Learning Blocks</h2>
+                    <p class="text-lg text-gray-600">
+                        Two hours are dedicated to immersive, interactive experiences. The pie chart shows an equal split between the career-focused session on Agentforce & Responsible AI and the hands-on Project Expo, ensuring attendees get a balanced dose of expert insight and peer-to-peer learning.
+                    </p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="impact" class="mb-20">
+             <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div class="text-center md:text-left">
+                    <h2 class="text-3xl font-bold mb-4">Expected Impact & Future Growth</h2>
+                    <p class="text-lg text-gray-600">
+                        The inauguration is just the beginning. We anticipate a significant increase in student engagement and membership following the event. This projection illustrates our goal for sustained growth as we roll out new programs and initiatives, solidifying the club's impact on campus.
+                    </p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="chart-container">
+                        <canvas id="impactChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-gray-900 text-white text-center py-12">
+        <h2 class="text-3xl font-bold">Ready to Innovate?</h2>
+        <p class="mt-2 text-lg text-gray-300">Join the Agentblazer Club and be part of the future of AI.</p>
+        <!-- <button class="mt-6 bg-[#FF5733] hover:bg-opacity-90 text-white font-bold py-3 px-8 rounded-lg text-lg">
+            Become a Member
+        </button> -->
+        <a href="https://forms.gle/AtPrhAuN8hSknYqEA" target="_blank" class="inline-block mt-6 bg-[#FF5733] hover:bg-opacity-90 text-white font-bold py-3 px-8 rounded-lg text-lg">
+            Become a Member
+        </a>
+    </footer>
+
+    <script>
+        function wrapText(text, maxLength) {
+            if (typeof text !== 'string' || text.length <= maxLength) {
+                return text;
+            }
+            const words = text.split(' ');
+            const lines = [];
+            let currentLine = '';
+            for (const word of words) {
+                if ((currentLine + word).length > maxLength && currentLine.length > 0) {
+                    lines.push(currentLine.trim());
+                    currentLine = '';
+                }
+                currentLine += word + ' ';
+            }
+            lines.push(currentLine.trim());
+            return lines;
+        }
+
+        const tooltipTitleCallback = (tooltipItems) => {
+            const item = tooltipItems[0];
+            let label = item.chart.data.labels[item.dataIndex];
+            if (Array.isArray(label)) {
+                return label.join(' ');
+            }
+            return label;
+        };
+        
+        const sharedChartOptions = {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    position: 'bottom',
+                    labels: {
+                        font: {
+                            size: 14,
+                            family: 'Inter'
+                        },
+                        color: '#374151'
+                    }
+                },
+                tooltip: {
+                    callbacks: {
+                        title: tooltipTitleCallback
+                    },
+                    backgroundColor: '#111827',
+                    titleFont: { size: 16, weight: 'bold' },
+                    bodyFont: { size: 14 },
+                    padding: 12,
+                    cornerRadius: 8
+                }
+            },
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    ticks: {
+                        color: '#4b5563',
+                        font: { family: 'Inter', size: 12 }
+                    },
+                    grid: {
+                        color: '#e5e7eb'
+                    }
+                },
+                x: {
+                    ticks: {
+                        color: '#4b5563',
+                        font: { family: 'Inter', size: 12 }
+                    },
+                    grid: {
+                        display: false
+                    }
+                }
+            }
+        };
+
+        const colors = {
+            orange: '#FF5733',
+            green: '#33FF57',
+            blue: '#3357FF',
+            pink: '#FF33A1',
+            yellow: '#F1C40F',
+            purple: '#8A2BE2', // Added purple for more color variety in Polar Area
+            cyan: '#00FFFF' // Added cyan for more color variety in Polar Area
+        };
+
+        // Responsible AI Polar Area Chart
+        const responsibleAICtx = document.getElementById('responsibleAIChart').getContext('2d');
+        new Chart(responsibleAICtx, {
+            type: 'polarArea',
+            data: {
+                labels: [
+                    wrapText('Fairness', 16), 
+                    wrapText('Accountability', 16), 
+                    wrapText('Transparency', 16), 
+                    wrapText('Privacy', 16), 
+                    wrapText('Security', 16)
+                ],
+                datasets: [{
+                    label: 'Importance Level',
+                    data: [5, 4, 5, 4, 5], // Conceptual values (1-5)
+                    backgroundColor: [
+                        'rgba(51, 87, 255, 0.7)',  // Blue
+                        'rgba(255, 87, 51, 0.7)',  // Orange
+                        'rgba(51, 255, 87, 0.7)',  // Green
+                        'rgba(255, 51, 161, 0.7)', // Pink
+                        'rgba(138, 43, 226, 0.7)'  // Purple
+                    ],
+                    borderColor: '#fff',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'right', // Position legend to the right for Polar Area
+                        labels: {
+                            font: {
+                                size: 14,
+                                family: 'Inter'
+                            },
+                            color: '#374151'
+                        }
+                    },
+                    tooltip: {
+                        callbacks: {
+                            title: tooltipTitleCallback
+                        },
+                        backgroundColor: '#111827',
+                        titleFont: { size: 16, weight: 'bold' },
+                        bodyFont: { size: 14 },
+                        padding: 12,
+                        cornerRadius: 8
+                    }
+                },
+                scales: {
+                    r: {
+                        grid: {
+                            color: '#e5e7eb'
+                        },
+                        ticks: {
+                            display: true, // Display numeric ticks
+                            beginAtZero: true,
+                            stepSize: 1, // Ensure ticks are at integer values
+                            color: '#4b5563', // Color for the tick labels
+                            backdropColor: 'rgba(255, 255, 255, 0.75)', // Backdrop for labels
+                            backdropPadding: 2 // Padding for the backdrop
+                        },
+                        pointLabels: {
+                            font: {
+                                size: 14,
+                                family: 'Inter'
+                            },
+                            color: '#4b5563'
+                        },
+                        suggestedMax: 5 // Explicitly set max to ensure full scale is visible
+                    }
+                }
+            }
+        });
+
+
+        const sessionsCtx = document.getElementById('sessionsChart').getContext('2d');
+        new Chart(sessionsCtx, {
+            type: 'pie',
+            data: {
+                labels: ['Career Session (1hr)', 'Project Expo (1hr)'],
+                datasets: [{
+                    label: 'Interactive Blocks',
+                    data: [60, 60],
+                    backgroundColor: [colors.orange, colors.green],
+                    hoverOffset: 4
+                }]
+            },
+            options: {
+                 responsive: true,
+                 maintainAspectRatio: false,
+                 plugins: {
+                    legend: sharedChartOptions.plugins.legend,
+                    tooltip: sharedChartOptions.plugins.tooltip
+                 }
+            }
+        });
+
+        const impactCtx = document.getElementById('impactChart').getContext('2d');
+        new Chart(impactCtx, {
+            type: 'line',
+            data: {
+                labels: ['Launch', 'Month 1', 'Month 2', 'Month 3', 'Month 4'],
+                datasets: [{
+                    label: 'Projected Membership Growth',
+                    data: [65, 90, 120, 140, 150], // Changed starting value to 65
+                    fill: true,
+                    backgroundColor: 'rgba(51, 255, 87, 0.2)',
+                    borderColor: colors.green,
+                    tension: 0.3,
+                    pointBackgroundColor: colors.green,
+                    pointRadius: 5
+                }]
+            },
+            options: {
+                ...sharedChartOptions,
+                scales: {
+                    y: {
+                        ...sharedChartOptions.scales.y,
+                        title: {
+                            display: true,
+                            text: 'Number of Members',
+                            font: { size: 14, weight: 'bold' }
+                        }
+                    }
+                }
+            }
+        });
+
+    </script>
+</body>
+</html>
